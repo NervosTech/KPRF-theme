@@ -633,7 +633,7 @@ body ul.topiclist.forums li.row:hover {
     background-color: #faf7ef !important;
 }
 
-/* Main page forum index: keep text dark */
+/* Main page forum index text */
 body ul.topiclist.forums li.row dd,
 body ul.topiclist.forums li.row dd span,
 body ul.topiclist.forums li.row dd time,
@@ -677,12 +677,12 @@ body ul.topiclist.forums li.row dd.lastpost a:hover {
     color: var(--kprf-gold) !important;
 }
 
-/* FINAL FIX: forum index counts visible */
+/* Homepage forum index counts */
 body ul.topiclist.forums li.row dd.topics,
 body ul.topiclist.forums li.row dd.posts,
 body ul.topiclist.forums li.row dd.views,
 body ul.topiclist.forums li.row dd.replies {
-    display: table-cell !important;
+    display: block !important;
     min-width: 72px !important;
     color: var(--kprf-text) !important;
     background: transparent !important;
@@ -696,6 +696,7 @@ body ul.topiclist.forums li.row dd.replies {
     font-weight: 600 !important;
     text-align: center !important;
     vertical-align: middle !important;
+    height: auto !important;
 }
 
 body ul.topiclist.forums li.row dd.topics *,
@@ -721,9 +722,9 @@ body ul.topiclist.forums li.row dd.replies dfn {
     display: none !important;
 }
 
-/* FINAL FIX: last post meta visible */
+/* Homepage last post meta */
 body ul.topiclist.forums li.row dd.lastpost {
-    display: table-cell !important;
+    display: block !important;
     color: var(--kprf-text) !important;
     background: transparent !important;
     opacity: 1 !important;
@@ -732,6 +733,7 @@ body ul.topiclist.forums li.row dd.lastpost {
     overflow: visible !important;
     white-space: normal !important;
     vertical-align: top !important;
+    height: auto !important;
 }
 
 body ul.topiclist.forums li.row dd.lastpost * {
@@ -789,73 +791,4 @@ body ul.topiclist.forums li.row .lastsubject,
 body ul.topiclist.forums li.row a.forumtitle {
     overflow-wrap: anywhere !important;
     word-break: break-word !important;
-}
-/* HOMEPAGE ONLY FIX: forum index counts + last post meta */
-body ul.topiclist.forums li.row dd.topics,
-body ul.topiclist.forums li.row dd.posts,
-body ul.topiclist.forums li.row dd.views,
-body ul.topiclist.forums li.row dd.replies {
-    color: #111111 !important;
-    background: transparent !important;
-    opacity: 1 !important;
-    visibility: visible !important;
-    text-indent: 0 !important;
-    font-size: 15px !important;
-    line-height: 1.3 !important;
-    font-weight: 600 !important;
-    white-space: nowrap !important;
-    overflow: visible !important;
-}
-
-body ul.topiclist.forums li.row dd.topics *,
-body ul.topiclist.forums li.row dd.posts *,
-body ul.topiclist.forums li.row dd.views *,
-body ul.topiclist.forums li.row dd.replies * {
-    color: #111111 !important;
-    background: transparent !important;
-    opacity: 1 !important;
-    visibility: visible !important;
-    text-indent: 0 !important;
-    font-size: 15px !important;
-    line-height: 1.3 !important;
-    font-weight: 600 !important;
-    white-space: nowrap !important;
-}
-
-body ul.topiclist.forums li.row dd.lastpost,
-body ul.topiclist.forums li.row dd.lastpost span,
-body ul.topiclist.forums li.row dd.lastpost time,
-body ul.topiclist.forums li.row dd.lastpost .small,
-body ul.topiclist.forums li.row dd.lastpost .gensmall,
-body ul.topiclist.forums li.row dd.lastpost .responsive-show,
-body ul.topiclist.forums li.row dd.lastpost .responsive-hide,
-body ul.topiclist.forums li.row dd.lastpost .topic-poster,
-body ul.topiclist.forums li.row dd.lastpost .topic-time {
-    color: #111111 !important;
-    background: transparent !important;
-    opacity: 1 !important;
-    visibility: visible !important;
-    text-indent: 0 !important;
-    font-size: 13px !important;
-    line-height: 1.4 !important;
-    font-weight: 400 !important;
-    white-space: normal !important;
-    overflow: visible !important;
-}
-
-body ul.topiclist.forums li.row dd.lastpost a,
-body ul.topiclist.forums li.row dd.lastpost a:link,
-body ul.topiclist.forums li.row dd.lastpost a:visited,
-body ul.topiclist.forums li.row dd.lastpost .username,
-body ul.topiclist.forums li.row dd.lastpost .username-coloured,
-body ul.topiclist.forums li.row dd.lastpost .lastsubject {
-    color: #5c0632 !important;
-    background: transparent !important;
-    font-weight: 700 !important;
-}
-
-body ul.topiclist.forums li.row dd.lastpost a:hover,
-body ul.topiclist.forums li.row dd.lastpost .username:hover,
-body ul.topiclist.forums li.row dd.lastpost .username-coloured:hover {
-    color: #c8a64a !important;
 }
