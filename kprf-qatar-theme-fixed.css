@@ -1,0 +1,638 @@
+/* =====================================================
+   KPRF Qatar Burgundy + Gold Theme - Clean Fixed Version
+   Burgundy:      #5C0632
+   Dark Burgundy: #3A021F
+   Gold:          #C8A64A
+   Body Text:     #111111
+   White:         #FFFFFF
+
+   Notes:
+   - Consolidated duplicated rules from the original file.
+   - Fixed conflicts where later rules changed gradients/backgrounds.
+   - Keeps normal content black, links burgundy, hover/menus/icons gold.
+   - Fixes topic/post/view numbers, tabs, breadcrumbs, buttons, and active states.
+===================================================== */
+
+:root {
+    --kprf-burgundy: #5C0632;
+    --kprf-dark-burgundy: #3A021F;
+    --kprf-gold: #C8A64A;
+    --kprf-text: #111111;
+    --kprf-white: #FFFFFF;
+    --kprf-light-row: #F2F2F2;
+    --kprf-border: #CCCCCC;
+
+    --bs-primary: #5C0632 !important;
+    --bs-primary-rgb: 92, 6, 50 !important;
+    --bs-link-color: #5C0632 !important;
+    --bs-link-hover-color: #C8A64A !important;
+    --bs-body-color: #111111 !important;
+    --bs-secondary-color: #111111 !important;
+}
+
+/* =====================================================
+   Base text
+===================================================== */
+
+html,
+body,
+#wrap,
+.page-body,
+.page-footer,
+.panel,
+.content,
+.postbody,
+.postbody .content,
+fieldset,
+fieldset dl,
+fieldset dt,
+fieldset dd,
+.panel p,
+.panel label,
+.panel span,
+.login,
+.login label,
+.stat-block,
+.stat-block p,
+.statistics,
+.statistics p,
+#online-list,
+#online-list p {
+    color: var(--kprf-text) !important;
+}
+
+/* =====================================================
+   Main burgundy areas
+===================================================== */
+
+.bg-primary,
+.headerbar,
+.navbar,
+.forabg,
+.forumbg,
+.card-header,
+.table-primary,
+li.header,
+.forabg .header,
+.forumbg .header,
+thead,
+.table thead th,
+#nav-breadcrumbs,
+.breadcrumbs {
+    background-color: var(--kprf-burgundy) !important;
+    background-image: linear-gradient(135deg, var(--kprf-dark-burgundy), var(--kprf-burgundy)) !important;
+    border-color: var(--kprf-burgundy) !important;
+}
+
+.forabg,
+.forumbg,
+.card,
+.table {
+    border-color: var(--kprf-burgundy) !important;
+}
+
+/* Text on burgundy headers */
+.headerbar,
+.headerbar h1,
+.headerbar p,
+.headerbar span,
+.headerbar a,
+.bg-primary,
+.bg-primary h1,
+.bg-primary p,
+.bg-primary span,
+.bg-primary a,
+li.header,
+li.header dt,
+li.header dd,
+li.header span,
+li.header a,
+.forabg .header,
+.forumbg .header,
+.forabg .header a,
+.forumbg .header a,
+thead,
+thead a,
+.table thead th,
+.table thead th a,
+ul.topiclist li.header dd,
+ul.topiclist li.header dd *,
+li.header dd,
+li.header dd * {
+    color: var(--kprf-white) !important;
+}
+
+/* =====================================================
+   Forum/topic rows
+===================================================== */
+
+.topiclist li.row,
+.forabg li.row,
+.forumbg li.row,
+ul.topiclist li.row,
+.bg1,
+.bg2,
+.bg3 {
+    background-color: var(--kprf-white) !important;
+    background-image: none !important;
+    color: var(--kprf-text) !important;
+}
+
+.forumbg .topiclist li.row:nth-child(even),
+.topiclist.topics li.row:nth-child(even) {
+    background-color: var(--kprf-light-row) !important;
+}
+
+/* Normal row text must remain readable */
+.topiclist li.row,
+.topiclist li.row dt,
+.topiclist li.row dd,
+.topiclist li.row p,
+.topiclist li.row span,
+.topiclist li.row dfn,
+.topiclist li.row time,
+.topiclist li.row .list-inner,
+.topiclist li.row .list-inner p,
+.topiclist li.row .list-inner span,
+.topiclist li.row .responsive-show,
+.forum_desc,
+.forum-description,
+.forum-description p,
+.forumdesc,
+.forumlist p,
+.forabg p,
+.forumbg p,
+.row p,
+.row .forum-desc,
+.row .gensmall,
+.row .small,
+.topic-poster,
+.topic-time,
+.topiclist li.row .small,
+.topiclist li.row .small a,
+.topiclist li.row .small span,
+.topiclist li.row .author,
+.topiclist li.row .author a {
+    color: var(--kprf-text) !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    background-color: transparent !important;
+}
+
+/* Topic/posts/views/lastpost columns */
+dd.topics,
+dd.posts,
+dd.views,
+dd.replies,
+dd.lastpost,
+dd.redirect,
+dd.time,
+dd.info,
+dd.option,
+dd.topics *,
+dd.posts *,
+dd.views *,
+dd.replies *,
+dd.lastpost span,
+dd.lastpost dfn,
+dd.lastpost time {
+    color: var(--kprf-text) !important;
+    background-color: transparent !important;
+    opacity: 1 !important;
+}
+
+/* Keep numbers readable, not bold unless required by theme */
+ul.topiclist li.row dd.topics,
+ul.topiclist li.row dd.posts,
+ul.topiclist li.row dd.views,
+ul.topiclist li.row dd.topics *,
+ul.topiclist li.row dd.posts *,
+ul.topiclist li.row dd.views * {
+    color: var(--kprf-text) !important;
+    background-color: transparent !important;
+    font-weight: normal !important;
+}
+
+/* =====================================================
+   Links and titles
+===================================================== */
+
+a,
+a:link,
+a:visited,
+a.nav-link,
+.nav-tabs a,
+.tabs a,
+#tabs a,
+.panel a,
+.copyright a,
+a.forumtitle,
+.forumtitle,
+a.topictitle,
+.topictitle,
+.row dt a,
+.row .forumtitle,
+.row .topictitle,
+dd.lastpost a,
+dd.lastpost a:link,
+dd.lastpost a:visited,
+.lastpost a,
+.username,
+.username-coloured,
+.topiclist li.row .username,
+.topiclist li.row .username-coloured,
+dd.lastpost .username,
+dd.lastpost .username-coloured {
+    color: var(--kprf-burgundy) !important;
+}
+
+a.forumtitle,
+.forumtitle,
+a.topictitle,
+.topictitle,
+.row .forumtitle,
+.row .topictitle,
+dd.lastpost a,
+.username,
+.username-coloured {
+    font-weight: 700 !important;
+}
+
+a:hover,
+a:focus,
+a.nav-link:hover,
+.nav-tabs a:hover,
+.tabs a:hover,
+#tabs a:hover,
+.panel a:hover,
+.copyright a:hover,
+a.forumtitle:hover,
+.forumtitle:hover,
+a.topictitle:hover,
+.topictitle:hover,
+dd.lastpost a:hover,
+.lastpost a:hover,
+.username:hover,
+.username-coloured:hover {
+    color: var(--kprf-gold) !important;
+}
+
+/* =====================================================
+   Navigation, breadcrumbs, footer
+===================================================== */
+
+#MainNavigation,
+#MainNavigation a,
+#MainNavigation i,
+#MainNavigation .fa,
+#MainNavigation span,
+.navbar a,
+.navbar .nav-link,
+.navbar i,
+.navbar .fa,
+.navbar span,
+.navbar .dropdown-toggle,
+#nav-main a,
+#nav-main i,
+#nav-footer a,
+#nav-footer i,
+#page-footer .navbar,
+#page-footer .navbar a,
+#page-footer .navbar i,
+#FooterNavigationList,
+#FooterNavigationList a,
+#FooterNavigationList i,
+#FooterNavigationList span,
+#nav-breadcrumbs,
+#nav-breadcrumbs a,
+#nav-breadcrumbs i,
+#nav-breadcrumbs .fa,
+.breadcrumbs,
+.breadcrumbs a,
+.breadcrumbs i,
+.breadcrumbs .fa,
+.breadcrumb-item,
+.breadcrumb-item a {
+    color: var(--kprf-gold) !important;
+}
+
+#MainNavigation a:hover,
+.navbar a:hover,
+#FooterNavigationList a:hover,
+#page-footer .navbar a:hover,
+.breadcrumbs a:hover,
+#nav-breadcrumbs a:hover {
+    color: var(--kprf-white) !important;
+}
+
+/* Copyright area should stay readable on light background */
+.copyright,
+.copyright p,
+.copyright span {
+    color: var(--kprf-text) !important;
+}
+
+.copyright a,
+.copyright a:link,
+.copyright a:visited {
+    color: var(--kprf-burgundy) !important;
+}
+
+.copyright a:hover {
+    color: var(--kprf-gold) !important;
+}
+
+/* =====================================================
+   Buttons
+===================================================== */
+
+.button,
+.button1,
+.button2,
+.btn,
+.btn-primary,
+.btn-primary:active,
+.btn-primary.active,
+.show > .btn-primary.dropdown-toggle,
+.button-secondary,
+input[type="submit"],
+input.button1,
+input.button2,
+button,
+button[type="submit"],
+button.button1,
+button.button2,
+a.button,
+a.btn,
+.post-buttons .button,
+.buttons .button,
+.action-bar .button,
+.action-bar a.button,
+.post-reply,
+a.post-reply,
+.dropdown-select {
+    background-color: var(--kprf-burgundy) !important;
+    background-image: none !important;
+    border-color: var(--kprf-burgundy) !important;
+    color: var(--kprf-white) !important;
+    opacity: 1 !important;
+}
+
+.button span,
+.button1 span,
+.button2 span,
+.btn span,
+a.button span,
+a.btn span {
+    color: var(--kprf-white) !important;
+}
+
+.button i,
+.button .fa,
+.button1 i,
+.button1 .fa,
+.button2 i,
+.button2 .fa,
+.btn i,
+.btn .fa,
+a.button i,
+a.button .fa {
+    color: var(--kprf-gold) !important;
+}
+
+.button:hover,
+.button1:hover,
+.button2:hover,
+.btn:hover,
+.btn-primary:hover,
+.button-secondary:hover,
+input[type="submit"]:hover,
+input.button1:hover,
+input.button2:hover,
+button:hover,
+button[type="submit"]:hover,
+button.button1:hover,
+button.button2:hover,
+a.button:hover,
+a.btn:hover,
+.post-buttons .button:hover,
+.buttons .button:hover,
+.action-bar .button:hover,
+.action-bar a.button:hover,
+.post-reply:hover,
+a.post-reply:hover,
+.dropdown-select:hover {
+    background-color: var(--kprf-dark-burgundy) !important;
+    border-color: var(--kprf-dark-burgundy) !important;
+    color: var(--kprf-gold) !important;
+}
+
+.button:hover span,
+.button1:hover span,
+.button2:hover span,
+.btn:hover span,
+a.button:hover span,
+a.btn:hover span {
+    color: var(--kprf-gold) !important;
+}
+
+.button.disabled,
+.button:disabled,
+.button1.disabled,
+.button1:disabled,
+.button2.disabled,
+.button2:disabled,
+.btn.disabled,
+.btn:disabled,
+input[type="submit"]:disabled,
+button:disabled,
+a.button.disabled,
+a.btn.disabled {
+    background-color: var(--kprf-burgundy) !important;
+    border-color: var(--kprf-burgundy) !important;
+    color: var(--kprf-gold) !important;
+    opacity: 1 !important;
+    cursor: not-allowed !important;
+}
+
+/* Search button */
+.search-box button,
+.search-box .button,
+.input-group button {
+    background-color: var(--kprf-dark-burgundy) !important;
+    border-color: var(--kprf-dark-burgundy) !important;
+    color: var(--kprf-gold) !important;
+}
+
+/* =====================================================
+   Forms
+===================================================== */
+
+input,
+select,
+textarea,
+.form-control {
+    color: var(--kprf-text) !important;
+    background-color: var(--kprf-white) !important;
+    border-color: var(--kprf-border) !important;
+}
+
+a:focus,
+button:focus,
+.btn:focus,
+.form-control:focus,
+.nav-link:focus,
+.dropdown-item:focus {
+    box-shadow: none !important;
+    outline-color: var(--kprf-gold) !important;
+    border-color: var(--kprf-gold) !important;
+}
+
+/* =====================================================
+   Login/register/headings/stat headings
+===================================================== */
+
+.login-title,
+.register-title,
+h2,
+h2 a,
+h3,
+h3 a,
+#login,
+#register,
+.tabs .tab a,
+.tabs .activetab a,
+.nav-tabs .nav-link,
+.stat-block h3,
+#online-list h3 {
+    color: var(--kprf-burgundy) !important;
+    font-weight: 700 !important;
+}
+
+/* =====================================================
+   Tabs, pills, dropdowns, active states
+===================================================== */
+
+#tabs a,
+#tabs a span,
+#minitabs a,
+#minitabs a span,
+.tabs a,
+.tabs a span,
+.tab > a,
+.tab > a span,
+.nav-pills .nav-link.active,
+.nav-tabs .nav-link.active,
+.tabs .tab > a,
+.tabs .activetab > a,
+.activetab a,
+#tabs .activetab a,
+#tabs .activetab a span,
+#minitabs .activetab a,
+#minitabs .activetab a span,
+.tabs .activetab a,
+.tabs .activetab a span,
+.activetab a span,
+#minitabs .activetab a,
+.ucp-main .nav-link.active,
+.cp-menu .nav-link.active,
+a.active,
+.active > a,
+.dropdown-menu .dropdown-item.active,
+.dropdown-menu .dropdown-item:active,
+.dropdown-menu li.active > a,
+.dropdown-menu a.active,
+.list-group-item.active,
+.list-group-item-action.active,
+.list-group-item-action:active {
+    background-color: var(--kprf-burgundy) !important;
+    color: var(--kprf-gold) !important;
+    border-color: var(--kprf-burgundy) !important;
+    font-weight: 700 !important;
+}
+
+#tabs a:hover,
+#tabs a:hover span,
+#minitabs a:hover,
+#minitabs a:hover span,
+.tabs a:hover,
+.tabs a:hover span,
+.dropdown-menu .dropdown-item:hover,
+.dropdown-menu a:hover {
+    background-color: var(--kprf-dark-burgundy) !important;
+    color: var(--kprf-white) !important;
+}
+
+/* =====================================================
+   Icons
+===================================================== */
+
+.forum-icon,
+.forum-icon-svg,
+.fa.icon-blue,
+.fa.icon-green,
+.fa.icon-red,
+.fa.icon-orange,
+.fa.icon-bluegray,
+.fa.icon-gray,
+.fa.icon-black,
+.fa-rss,
+.icon.fa-rss,
+.icon.fa-rss-square,
+.feed-icon,
+.feed-icon a,
+.feed-icon i,
+.fa-external-link,
+.icon-link,
+a .fa,
+a:hover .fa.icon-blue,
+a:hover .fa.icon-green,
+a:hover .fa.icon-red,
+a:hover .fa.icon-orange,
+a:hover .fa.icon-bluegray,
+a:hover .fa.icon-gray,
+a:hover .fa.icon-black {
+    color: var(--kprf-gold) !important;
+}
+
+.forum-icon-svg,
+svg.icon {
+    fill: var(--kprf-gold) !important;
+}
+
+.row-item:before,
+.topic_read:before,
+.topic_unread:before,
+.topic_read_mine:before,
+.topic_unread_mine:before,
+.forum_read:before,
+.forum_unread:before,
+.forum_read_subforum:before,
+.forum_unread_subforum:before {
+    background-color: var(--kprf-burgundy) !important;
+    color: var(--kprf-gold) !important;
+}
+
+/* =====================================================
+   Miscellaneous
+===================================================== */
+
+.mark-read,
+.markread,
+a.mark-read,
+a.markread {
+    color: var(--kprf-burgundy) !important;
+    border-color: var(--kprf-burgundy) !important;
+}
+
+.tooltip,
+.tooltip-inner {
+    color: var(--kprf-text) !important;
+    background-color: var(--kprf-white) !important;
+    border: 1px solid var(--kprf-burgundy) !important;
+}
+
+::selection {
+    background-color: var(--kprf-burgundy) !important;
+    color: var(--kprf-white) !important;
+}
