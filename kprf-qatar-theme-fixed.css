@@ -1,39 +1,25 @@
-/* =====================================================
-   KPRF Qatar Burgundy + Gold Theme - Clean Fixed Version
-   Burgundy:      #5C0632
-   Dark Burgundy: #3A021F
-   Gold:          #C8A64A
-   Body Text:     #111111
-   White:         #FFFFFF
-
-   Notes:
-   - Consolidated duplicated rules from the original file.
-   - Fixed conflicts where later rules changed gradients/backgrounds.
-   - Keeps normal content black, links burgundy, hover/menus/icons gold.
-   - Fixes topic/post/view numbers, tabs, breadcrumbs, buttons, and active states.
-===================================================== */
+/* /assets/theme/kprf-qatar-burgundy-gold.css
+   KPRF Qatar Burgundy + Gold Theme
+*/
 
 :root {
-    --kprf-burgundy: #5C0632;
-    --kprf-dark-burgundy: #3A021F;
-    --kprf-gold: #C8A64A;
+    --kprf-burgundy: #5c0632;
+    --kprf-dark-burgundy: #3a021f;
+    --kprf-gold: #c8a64a;
     --kprf-text: #111111;
-    --kprf-white: #FFFFFF;
-    --kprf-light-row: #F2F2F2;
-    --kprf-border: #CCCCCC;
+    --kprf-white: #ffffff;
+    --kprf-light-row: #f2f2f2;
+    --kprf-border: #cccccc;
 
-    --bs-primary: #5C0632 !important;
-    --bs-primary-rgb: 92, 6, 50 !important;
-    --bs-link-color: #5C0632 !important;
-    --bs-link-hover-color: #C8A64A !important;
-    --bs-body-color: #111111 !important;
-    --bs-secondary-color: #111111 !important;
+    --bs-primary: #5c0632;
+    --bs-primary-rgb: 92, 6, 50;
+    --bs-link-color: #5c0632;
+    --bs-link-hover-color: #c8a64a;
+    --bs-body-color: #111111;
+    --bs-secondary-color: #111111;
 }
 
-/* =====================================================
-   Base text
-===================================================== */
-
+/* Base text */
 html,
 body,
 #wrap,
@@ -57,14 +43,14 @@ fieldset dd,
 .statistics,
 .statistics p,
 #online-list,
-#online-list p {
+#online-list p,
+.copyright,
+.copyright p,
+.copyright span {
     color: var(--kprf-text) !important;
 }
 
-/* =====================================================
-   Main burgundy areas
-===================================================== */
-
+/* Main burgundy areas */
 .bg-primary,
 .headerbar,
 .navbar,
@@ -91,7 +77,7 @@ thead,
     border-color: var(--kprf-burgundy) !important;
 }
 
-/* Text on burgundy headers */
+/* White text only on actual headers */
 .headerbar,
 .headerbar h1,
 .headerbar p,
@@ -117,15 +103,16 @@ thead a,
 .table thead th a,
 ul.topiclist li.header dd,
 ul.topiclist li.header dd *,
+ul.topiclist li.header dt,
+ul.topiclist li.header dt *,
 li.header dd,
-li.header dd * {
+li.header dd *,
+li.header dt,
+li.header dt * {
     color: var(--kprf-white) !important;
 }
 
-/* =====================================================
-   Forum/topic rows
-===================================================== */
-
+/* Forum/topic rows */
 .topiclist li.row,
 .forabg li.row,
 .forumbg li.row,
@@ -143,7 +130,7 @@ ul.topiclist li.row,
     background-color: var(--kprf-light-row) !important;
 }
 
-/* Normal row text must remain readable */
+/* Readable row text */
 .topiclist li.row,
 .topiclist li.row dt,
 .topiclist li.row dd,
@@ -174,12 +161,12 @@ ul.topiclist li.row,
 .topiclist li.row .author,
 .topiclist li.row .author a {
     color: var(--kprf-text) !important;
+    background-color: transparent !important;
     opacity: 1 !important;
     visibility: visible !important;
-    background-color: transparent !important;
 }
 
-/* Topic/posts/views/lastpost columns */
+/* Topic/post/view/last-post columns */
 dd.topics,
 dd.posts,
 dd.views,
@@ -193,30 +180,25 @@ dd.topics *,
 dd.posts *,
 dd.views *,
 dd.replies *,
-dd.lastpost span,
-dd.lastpost dfn,
-dd.lastpost time {
-    color: var(--kprf-text) !important;
-    background-color: transparent !important;
-    opacity: 1 !important;
-}
-
-/* Keep numbers readable, not bold unless required by theme */
+dd.lastpost *,
 ul.topiclist li.row dd.topics,
 ul.topiclist li.row dd.posts,
 ul.topiclist li.row dd.views,
+ul.topiclist li.row dd.replies,
+ul.topiclist li.row dd.lastpost,
 ul.topiclist li.row dd.topics *,
 ul.topiclist li.row dd.posts *,
-ul.topiclist li.row dd.views * {
+ul.topiclist li.row dd.views *,
+ul.topiclist li.row dd.replies *,
+ul.topiclist li.row dd.lastpost * {
     color: var(--kprf-text) !important;
     background-color: transparent !important;
-    font-weight: normal !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    text-shadow: none !important;
 }
 
-/* =====================================================
-   Links and titles
-===================================================== */
-
+/* Links and titles */
 a,
 a:link,
 a:visited,
@@ -277,10 +259,7 @@ dd.lastpost a:hover,
     color: var(--kprf-gold) !important;
 }
 
-/* =====================================================
-   Navigation, breadcrumbs, footer
-===================================================== */
-
+/* Navigation / breadcrumbs / footer */
 #MainNavigation,
 #MainNavigation a,
 #MainNavigation i,
@@ -325,7 +304,7 @@ dd.lastpost a:hover,
     color: var(--kprf-white) !important;
 }
 
-/* Copyright area should stay readable on light background */
+/* Copyright */
 .copyright,
 .copyright p,
 .copyright span {
@@ -342,10 +321,7 @@ dd.lastpost a:hover,
     color: var(--kprf-gold) !important;
 }
 
-/* =====================================================
-   Buttons
-===================================================== */
-
+/* Buttons */
 .button,
 .button1,
 .button2,
@@ -464,10 +440,7 @@ a.btn.disabled {
     color: var(--kprf-gold) !important;
 }
 
-/* =====================================================
-   Forms
-===================================================== */
-
+/* Forms */
 input,
 select,
 textarea,
@@ -488,10 +461,7 @@ button:focus,
     border-color: var(--kprf-gold) !important;
 }
 
-/* =====================================================
-   Login/register/headings/stat headings
-===================================================== */
-
+/* Headings */
 .login-title,
 .register-title,
 h2,
@@ -509,10 +479,7 @@ h3 a,
     font-weight: 700 !important;
 }
 
-/* =====================================================
-   Tabs, pills, dropdowns, active states
-===================================================== */
-
+/* Tabs / pills / dropdowns / active states */
 #tabs a,
 #tabs a span,
 #minitabs a,
@@ -533,7 +500,6 @@ h3 a,
 .tabs .activetab a,
 .tabs .activetab a span,
 .activetab a span,
-#minitabs .activetab a,
 .ucp-main .nav-link.active,
 .cp-menu .nav-link.active,
 a.active,
@@ -563,10 +529,7 @@ a.active,
     color: var(--kprf-white) !important;
 }
 
-/* =====================================================
-   Icons
-===================================================== */
-
+/* Icons */
 .forum-icon,
 .forum-icon-svg,
 .fa.icon-blue,
@@ -613,10 +576,7 @@ svg.icon {
     color: var(--kprf-gold) !important;
 }
 
-/* =====================================================
-   Miscellaneous
-===================================================== */
-
+/* Misc */
 .mark-read,
 .markread,
 a.mark-read,
@@ -635,4 +595,61 @@ a.markread {
 ::selection {
     background-color: var(--kprf-burgundy) !important;
     color: var(--kprf-white) !important;
+}
+
+/* Main page forum index fix */
+body ul.topiclist.forums li.row dd,
+body ul.topiclist.forums li.row dd span,
+body ul.topiclist.forums li.row dd time,
+body ul.topiclist.forums li.row dd dfn,
+body ul.topiclist.forums li.row dd small,
+body ul.topiclist.forums li.row .small,
+body ul.topiclist.forums li.row .gensmall,
+body ul.topiclist.forums li.row .responsive-show,
+body ul.topiclist.forums li.row .responsive-hide,
+body ul.topiclist.forums li.row .lastpost,
+body ul.topiclist.forums li.row .lastpost span,
+body ul.topiclist.forums li.row .lastpost time,
+body ul.topiclist.forums li.row .topic-poster,
+body ul.topiclist.forums li.row .topic-time {
+    color: var(--kprf-text) !important;
+    background: transparent !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    text-shadow: none !important;
+}
+
+/* Main page links/titles */
+body ul.topiclist.forums li.row a.forumtitle,
+body ul.topiclist.forums li.row a.forumtitle:link,
+body ul.topiclist.forums li.row a.forumtitle:visited,
+body ul.topiclist.forums li.row dd.lastpost a,
+body ul.topiclist.forums li.row dd.lastpost a:link,
+body ul.topiclist.forums li.row dd.lastpost a:visited,
+body ul.topiclist.forums li.row .username,
+body ul.topiclist.forums li.row .username-coloured,
+body ul.topiclist.forums li.row .lastsubject {
+    color: var(--kprf-burgundy) !important;
+    background: transparent !important;
+    font-weight: 700 !important;
+}
+
+body ul.topiclist.forums li.row a:hover,
+body ul.topiclist.forums li.row .username:hover,
+body ul.topiclist.forums li.row .username-coloured:hover {
+    color: var(--kprf-gold) !important;
+}
+
+/* Main page counts */
+body ul.topiclist.forums li.row dd.topics,
+body ul.topiclist.forums li.row dd.posts,
+body ul.topiclist.forums li.row dd.views,
+body ul.topiclist.forums li.row dd.replies,
+body ul.topiclist.forums li.row dd.topics *,
+body ul.topiclist.forums li.row dd.posts *,
+body ul.topiclist.forums li.row dd.views *,
+body ul.topiclist.forums li.row dd.replies * {
+    color: var(--kprf-text) !important;
+    background: transparent !important;
+    font-weight: 600 !important;
 }
