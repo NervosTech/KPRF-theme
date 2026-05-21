@@ -461,7 +461,6 @@ button:focus,
     border-color: var(--kprf-gold) !important;
 }
 
-/* Better keyboard focus */
 a:focus-visible,
 button:focus-visible,
 .btn:focus-visible,
@@ -611,7 +610,30 @@ a.markread {
     color: var(--kprf-white) !important;
 }
 
-/* Main page forum index fix */
+/* Smooth transitions */
+a,
+button,
+.button,
+.button1,
+.button2,
+.btn,
+input[type="submit"] {
+    transition:
+        color 0.2s ease,
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+/* Hover feedback */
+.topiclist li.row:hover,
+.forabg li.row:hover,
+.forumbg li.row:hover,
+body ul.topiclist.forums li.row:hover {
+    background-color: #faf7ef !important;
+}
+
+/* Main page forum index: keep text dark */
 body ul.topiclist.forums li.row dd,
 body ul.topiclist.forums li.row dd span,
 body ul.topiclist.forums li.row dd time,
@@ -650,63 +672,121 @@ body ul.topiclist.forums li.row .lastsubject {
 
 body ul.topiclist.forums li.row a:hover,
 body ul.topiclist.forums li.row .username:hover,
-body ul.topiclist.forums li.row .username-coloured:hover {
+body ul.topiclist.forums li.row .username-coloured:hover,
+body ul.topiclist.forums li.row dd.lastpost a:hover {
     color: var(--kprf-gold) !important;
 }
 
-/* Main page counts */
+/* FINAL FIX: forum index counts visible */
 body ul.topiclist.forums li.row dd.topics,
 body ul.topiclist.forums li.row dd.posts,
 body ul.topiclist.forums li.row dd.views,
-body ul.topiclist.forums li.row dd.replies,
+body ul.topiclist.forums li.row dd.replies {
+    display: table-cell !important;
+    min-width: 72px !important;
+    color: var(--kprf-text) !important;
+    background: transparent !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    text-indent: 0 !important;
+    overflow: visible !important;
+    white-space: nowrap !important;
+    font-size: 15px !important;
+    line-height: 1.3 !important;
+    font-weight: 600 !important;
+    text-align: center !important;
+    vertical-align: middle !important;
+}
+
 body ul.topiclist.forums li.row dd.topics *,
 body ul.topiclist.forums li.row dd.posts *,
 body ul.topiclist.forums li.row dd.views *,
 body ul.topiclist.forums li.row dd.replies * {
     color: var(--kprf-text) !important;
     background: transparent !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    text-indent: 0 !important;
+    overflow: visible !important;
+    white-space: nowrap !important;
+    font-size: 15px !important;
+    line-height: 1.3 !important;
     font-weight: 600 !important;
-    text-align: center !important;
-    vertical-align: middle !important;
 }
 
-/* Forum index wrapping polish */
+body ul.topiclist.forums li.row dd.topics dfn,
+body ul.topiclist.forums li.row dd.posts dfn,
+body ul.topiclist.forums li.row dd.views dfn,
+body ul.topiclist.forums li.row dd.replies dfn {
+    display: none !important;
+}
+
+/* FINAL FIX: last post meta visible */
+body ul.topiclist.forums li.row dd.lastpost {
+    display: table-cell !important;
+    color: var(--kprf-text) !important;
+    background: transparent !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    text-indent: 0 !important;
+    overflow: visible !important;
+    white-space: normal !important;
+    vertical-align: top !important;
+}
+
+body ul.topiclist.forums li.row dd.lastpost * {
+    opacity: 1 !important;
+    visibility: visible !important;
+    text-indent: 0 !important;
+    overflow: visible !important;
+    text-shadow: none !important;
+}
+
+body ul.topiclist.forums li.row dd.lastpost a,
+body ul.topiclist.forums li.row dd.lastpost a:link,
+body ul.topiclist.forums li.row dd.lastpost a:visited,
+body ul.topiclist.forums li.row dd.lastpost .username,
+body ul.topiclist.forums li.row dd.lastpost .username-coloured,
+body ul.topiclist.forums li.row dd.lastpost .lastsubject {
+    color: var(--kprf-burgundy) !important;
+    background: transparent !important;
+    font-weight: 700 !important;
+}
+
+body ul.topiclist.forums li.row dd.lastpost span,
+body ul.topiclist.forums li.row dd.lastpost time,
+body ul.topiclist.forums li.row dd.lastpost .small,
+body ul.topiclist.forums li.row dd.lastpost .gensmall,
+body ul.topiclist.forums li.row dd.lastpost .responsive-show,
+body ul.topiclist.forums li.row dd.lastpost .responsive-hide,
+body ul.topiclist.forums li.row dd.lastpost .topic-poster,
+body ul.topiclist.forums li.row dd.lastpost .topic-time,
+body ul.topiclist.forums li.row dd.lastpost br + * {
+    display: block !important;
+    color: var(--kprf-text) !important;
+    background: transparent !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    text-indent: 0 !important;
+    overflow: visible !important;
+    white-space: normal !important;
+    font-size: 13px !important;
+    line-height: 1.4 !important;
+    font-weight: 400 !important;
+}
+
+body ul.topiclist.forums li.row dd.lastpost .fa,
+body ul.topiclist.forums li.row dd.lastpost a .fa,
+body ul.topiclist.forums li.row .forum-icon,
+body ul.topiclist.forums li.row .forum-icon-svg {
+    color: var(--kprf-gold) !important;
+    fill: var(--kprf-gold) !important;
+}
+
 body ul.topiclist.forums li.row dd.lastpost,
 body ul.topiclist.forums li.row dd.lastpost a,
 body ul.topiclist.forums li.row .lastsubject,
 body ul.topiclist.forums li.row a.forumtitle {
     overflow-wrap: anywhere !important;
     word-break: break-word !important;
-}
-
-/* Last post meta readability */
-body ul.topiclist.forums li.row dd.lastpost time,
-body ul.topiclist.forums li.row dd.lastpost .small,
-body ul.topiclist.forums li.row dd.lastpost .gensmall,
-body ul.topiclist.forums li.row .topic-poster,
-body ul.topiclist.forums li.row .topic-time {
-    font-size: 0.92em !important;
-    line-height: 1.4 !important;
-}
-
-/* Consistent hover feedback */
-a,
-button,
-.button,
-.button1,
-.button2,
-.btn,
-input[type="submit"] {
-    transition:
-        color 0.2s ease,
-        background-color 0.2s ease,
-        border-color 0.2s ease,
-        box-shadow 0.2s ease;
-}
-
-.topiclist li.row:hover,
-.forabg li.row:hover,
-.forumbg li.row:hover,
-body ul.topiclist.forums li.row:hover {
-    background-color: #faf7ef !important;
 }
